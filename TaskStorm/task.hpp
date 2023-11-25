@@ -15,14 +15,12 @@ private:
     std::string taskDate;
     std::string taskDetail;
     static std::vector<std::string> taskDetails;
-    static int taskCount;
 
 public:
   
     Task(const std::string& taskName) : taskName(taskName) 
     { 
         //To increment number of tasks on instantiation of a Task object
-        taskCount++; 
     }
 
     void setTaskName() 
@@ -76,18 +74,14 @@ public:
         return taskDetail;
     }
 
-    static int getTaskCount()
-    {
-        //Get number of times Task has been instantiated
-        return taskCount;
-    }
 
-    void showTaskDetails() const 
+    void showTaskDetails()
     {
         //Output the task attributes
         //Not to be confused with attribute "taskDetail"
         std::cout << "Task Name: " << getTaskName() << std::endl;
         std::cout << "Task Date: " << getTaskDate() << std::endl;
+        std::cout << "Task Detail: " << getTaskDetail() << std::endl;
     }
 
     Task() = default;
